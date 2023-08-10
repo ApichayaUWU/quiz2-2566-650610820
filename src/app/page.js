@@ -1,5 +1,10 @@
 "use client";
 
+import { PostOwner } from "@/components/PostOwner";
+import { Comment } from "@/components/Comment";
+import { Reply } from "@/components/Reply";
+import { comments } from "@/libs/comments";
+
 export default function HomePage() {
   return (
     <div
@@ -12,7 +17,8 @@ export default function HomePage() {
         className="mx-auto p-3 rounded rounded-3 shadow-sm bg-white"
       >
         {/* Post Owner Example*/}
-        <div className="vstack gap-3">
+        <PostOwner />
+        {/* <div className="vstack gap-3">
           <div className="d-flex align-items-center gap-3">
             <img
               src="/profileImages/handsome.jpg"
@@ -31,10 +37,22 @@ export default function HomePage() {
             <span className="text-muted">100 คน</span>
           </div>
           <hr className="m-0 border" />
-        </div>
+        </div> */}
 
         {/* Comment Example */}
-        <div className="d-flex gap-2 my-2">
+
+        {comments.map((m, i) => (
+          <Comment
+            userImagePath={m.userImagePath}
+            username={m.username}
+            commentText={m.commentText}
+            likeNum={m.likeNum}
+            replies={m.replies}
+            number={i + 1}
+          />
+        ))}
+
+        {/* <div className="d-flex gap-2 my-2">
           <img
             src="/profileImages/lisa.jpg"
             width="48"
@@ -54,10 +72,11 @@ export default function HomePage() {
               <span className="text-muted">999 คน</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Reply Example */}
-        <div className="d-flex gap-2 my-2 ps-5">
+        {/* <Reply /> */}
+        {/* <div className="d-flex gap-2 my-2 ps-5">
           <img
             src="/profileImages/puppy.jpg"
             width="48"
@@ -77,7 +96,7 @@ export default function HomePage() {
               <span className="text-muted">2 คน</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* map-loop render Comment component here */}
       </div>
