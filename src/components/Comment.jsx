@@ -1,4 +1,3 @@
-import { comments } from "@/libs/comments";
 import { Reply } from "./Reply";
 
 export const Comment = ({
@@ -25,7 +24,9 @@ export const Comment = ({
           <span className="fw-semibold">{username}</span>
           <br />
           <span>{commentText}</span>
-          {{ likeNum } != 0 && (
+          {{ likeNum } === 0 ? (
+            ""
+          ) : (
             <div className="d-flex align-items-center gap-1">
               <img src="/like.svg" width={20}></img>
               <span className="text-muted">{likeNum} คน</span>
