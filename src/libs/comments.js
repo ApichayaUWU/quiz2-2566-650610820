@@ -23,7 +23,7 @@ export const comments = [
     username: "Charlie Brown",
     userImagePath: "/profileImages/charliebrown.jpg",
     commentText: "บ้าไปแล้ว",
-    likeNum: 4,
+    likeNum: 0,
     replies: [],
   },
 ];
